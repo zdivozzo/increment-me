@@ -1,0 +1,18 @@
+{
+  "name": "increment-me",
+  "main": "./lib/increment-me",
+  "version": "0.0.0",
+  "description": "A simple package to add incrementing numbers to multiple cursor locations",
+  "keywords": [
+  ],
+  "activationCommands": {
+    "atom-workspace": "increment-me:increment"
+  },
+  "repository": "https://github.com/zdivozzo/increment-me",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
