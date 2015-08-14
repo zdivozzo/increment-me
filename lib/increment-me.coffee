@@ -32,7 +32,8 @@ module.exports =
         i++
 
       selectionNumbers = selectionNumbers.reverse().join('')
-      selectionText = selectionText.slice(0,(selectionNumbers.length)*-1)
+      if selectionNumbers
+        selectionText = selectionText.slice(0,(selectionNumbers.length)*-1)
 
       if selectionNumbers && index == 0
         seedNumber = selectionNumbers
