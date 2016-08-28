@@ -1,7 +1,7 @@
 {
   "name": "increment-me",
   "main": "./lib/increment-me",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A simple package to add incrementing numbers to multiple cursor locations",
   "keywords": [],
   "activationCommands": {
