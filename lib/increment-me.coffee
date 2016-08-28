@@ -14,7 +14,7 @@ module.exports =
  convert: ->
 
     editor = atom.workspace.getActiveTextEditor()
-    selections = editor.getSelections()
+    selections = editor.getSelectionsOrderedByBufferPosition()
     seedNumber = 1
 
     selections.forEach (selection, index) ->
