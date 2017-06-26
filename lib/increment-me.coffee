@@ -17,26 +17,27 @@ module.exports =
     selections = editor.getSelectionsOrderedByBufferPosition()
     seedNumber = 1
 
-    selections.forEach (selection, index) ->
+    editor.transact 0, ->
+      selections.forEach (selection, index) ->
 
-      selectionText = selection.getText()
-      selectionArray = selectionText.split('').reverse()
-      selectionNumbers = []
+        selectionText = selection.getText()
+        selectionArray = selectionText.split('').reverse()
+        selectionNumbers = []
 
-      i = 0
-      while i < selectionArray.length
-        if isNaN(selectionArray[i])
-          break
-        else
-          selectionNumbers.push(selectionArray[i])
-        i++
+        i = 0
+        while i < selectionArray.length
+          if isNaN(selectionArray[i])
+            break
+          else
+            selectionNumbers.push(selectionArray[i])
+          i++
 
-      selectionNumbers = selectionNumbers.reverse().join('')
-      if selectionNumbers
-        selectionText = selectionText.slice(0,(selectionNumbers.length)*-1)
+        selectionNumbers = selectionNumbers.reverse().join('')
+        if selectionNumbers
+          selectionText = selectionText.slice(0,(selectionNumbers.length)*-1)
 
-      if selectionNumbers && index == 0
-        seedNumber = selectionNumbers
+        if selectionNumbers && index == 0
+          seedNumber = selectionNumbers
 
-      selection.insertText(selectionText + seedNumber)
-      seedNumber++
+        selection.insertText(selectionText + seedNumber)
+        seedNumber++
